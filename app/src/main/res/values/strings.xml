@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="send">Send</string>
+    <string name="type_message">Type a message...</string>
+    <string name="chats">Chats</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="no_users">No users found</string>
+    <string name="no_messages">No messages yet</string>
+</resources>
+

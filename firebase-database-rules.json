@@ -1,0 +1,31 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid || auth != null",
+        ".write": "$uid === auth.uid",
+        ".validate": "newData.hasChildren(['uid', 'name', 'email']) && newData.child('uid').val() === $uid"
+      }
+    },
+    "chats": {
+      "$senderId": {
+        "$receiverId": {
+          "$messageId": {
+            ".read": "$senderId === auth.uid || $receiverId === auth.uid",
+            ".write": "$senderId === auth.uid || $receiverId === auth.uid",
+            ".validate": "newData.hasChildren(['messageId', 'message', 'senderId', 'receiverId', 'timestamp']) && (newData.child('senderId').val() === $senderId || newData.child('receiverId').val() === $senderId)"
+          }
+        }
+      }
+    },
+    "status": {
+      "$userId": {
+        "isOnline": {
+          ".read": "auth != null",
+          ".write": "$userId === auth.uid"
+        }
+      }
+    }
+  }
+}
+
